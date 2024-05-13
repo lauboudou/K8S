@@ -1,0 +1,34 @@
+
+minikube -p minikube docker-env | Invoke-Expression
+
+kubectl delete service wordpress wordpress-mysql
+kubectl delete deployment wordpress wordpress-mysql
+kubectl delete pvc mysql-pv-claim wp-pv-claim
+
+
+kubectl delete service wordpress
+kubectl delete deployment wordpress
+kubectl delete pvc wp-pv-claim
+
+kubectl delete service wordpress-mysql
+kubectl delete deployment wordpress-mysql
+kubectl delete pvc mysql-pv-claim
+
+kubectl get pods
+kubectl get service
+kubectl get deployment
+
+
+kubectl apply -f .\mysql-service.yaml
+kubectl apply -f .\mysql-deployment.yaml
+kubectl apply -f .\mysql-pvc.yaml
+
+kubectl apply -f .\wordpress-service.yaml
+kubectl apply -f .\wordpress-deployment.yaml
+kubectl apply -f .\wordpress-pvc.yaml
+
+kubectl get service
+kubectl get deployment
+kubectl get pods
+
+minikube service wordpress

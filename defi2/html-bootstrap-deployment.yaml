@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: html-bootstrap-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: html-bootstrap
+  template:
+    metadata:
+      labels:
+        app: html-bootstrap
+    spec:
+      containers:
+      - name: html-bootstrap
+        image: html-bootstrap-nginx
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80

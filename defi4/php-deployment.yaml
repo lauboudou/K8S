@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-php
+  template:
+    metadata:
+      labels:
+        app: app-php
+    spec:
+      containers:
+      - name: app-php
+        image: ld-php-nginx
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
