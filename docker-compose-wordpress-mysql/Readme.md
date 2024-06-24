@@ -12,17 +12,17 @@ Note: l'environnement de déploiement était windows d'où l’@IP du service my
 minikube -p minikube docker-env | Invoke-Expression
 
 # Créer le déploiement et le service mysql
-kubectl apply -f .\mysql-service.yaml
-kubectl apply -f .\mysql-deployment.yaml
-kubectl apply -f .\mysql-pvc.yaml
+kubectl apply -f mysql-service.yaml
+kubectl apply -f mysql-deployment.yaml
+kubectl apply -f mysql-pvc.yaml
 
 # Créer le déploiement et le service wordpress
-kubectl apply -f .\wordpress-service.yaml
-kubectl apply -f .\wordpress-deployment.yaml
-kubectl apply -f .\wordpress-pvc.yaml
+kubectl apply -f wordpress-service.yaml
+kubectl apply -f wordpress-deployment.yaml
+kubectl apply -f wordpress-pvc.yaml
 
 # Deploy wordpress-ingress.yaml et Activer le ingress controller 
-kubectl apply -f .\wordpress-ingress.yaml
+kubectl apply -f wordpress-ingress.yaml
 
 minikube addons enable ingress
 

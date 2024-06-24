@@ -24,7 +24,7 @@ spec:
         env:
         - name: WORDPRESS_DB_HOST
           #value: mettre IP de mysql sur windows
-          value: "10.109.210.191"
+          value: "10.102.61.36"
         - name: WORDPRESS_DB_PASSWORD
           value: password
         - name: WORDPRESS_DB_USER
